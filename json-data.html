@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Json Data</title>
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar10">
+            <ul class="navbar-nav nav-fill w-100">
+                <li class="nav-item ">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact-us.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Registration</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="json-data.html">Json Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="datatables.html">Data Tables</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main role="main" class="container">
+      <h1 class="mt-5">Json Data</h1>
+      <span class="badge badge-danger">Loading Data from: /assets/js/data.js</span>
+      <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>DOB</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-danger">
+                <strong>Instructions:</strong>
+                <br>
+                To add data open /assets/js/data.js and add new value to the object
+            </div>
+        </div>
+      </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted">Copyright &copy; All Rights Reserved - 2020
+        <div class="float-right footer-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x text-dark"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x text-dark"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x text-dark"></i></a>
+        </div>
+    </span>
+  </div>
+</footer>
+<script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/data.js"></script>
+<script type="text/javascript">
+    let html;
+    for(let i in obj){
+        html = "<tr>";
+        html+= "<td>"+obj[i].name+"</td>";
+        html+= "<td>"+obj[i].email+"</td>";
+        html+= "<td>"+obj[i].dob+"</td>";
+        html+= "<td>"+obj[i].phone+"</td>";
+        html+= "</tr>";
+        $("tbody").append(html);
+    }
+</script>
+</body>
+</html>
